@@ -62,10 +62,6 @@ async def stats_global(client, message: Message):
 import asyncio
 import speedtest
 
-# Commands
-SPEEDTEST_COMMAND = get_command("SPEEDTEST_COMMAND")
-
-
 def testspeed(m):
     try:
         test = speedtest.Speedtest()
@@ -82,7 +78,8 @@ def testspeed(m):
     return result
 
 
-@app.on_message(filters.command("speedtest") & filters.user(ADMINS))
+@app.on_message(filters.command(["speedtest", "spd"]) & filters.user(ADMINS))
+@APP.on_message(filters.command(["speedtest", "spd"]) & filters.user(ADMINS))
 async def speedtest_function(client, message):
     m = await message.reply_text("💫 ᴛʀʏɪɴɢ ᴛᴏ ᴄʜᴇᴄᴋ ᴜᴩʟᴏᴀᴅ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ sᴩᴇᴇᴅ")
     loop = asyncio.get_event_loop()
