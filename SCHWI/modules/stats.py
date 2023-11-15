@@ -8,11 +8,12 @@ from pyrogram import filters
 from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import Message
 
-import config
+from config import ADMINS
 from SCHWI import app, APP
 loop = asyncio.get_running_loop()
 
-@app.on_message(filters.command("stats") & filters.group)
+@app.on_message(filters.command(["stats2", "ping2"]) & filters.group & filters.user(ADMINS))
+@APP.on_message(filters.command(["stats2", "ping2"]) & filters.group & filters.user(ADMINS))
 async def stats_global(client, message: Message):
     MSG = await message.reply_text("Loading...")
     sc = platform.system()
