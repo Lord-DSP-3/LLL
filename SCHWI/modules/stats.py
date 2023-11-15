@@ -100,8 +100,6 @@ async def speedtest_function(client, message):
 **__ʟᴀᴛᴇɴᴄʏ:__** {result['server']['latency']}  
 **__ᴩɪɴɢ:__** {result['ping']}"""
     Medit = InputMediaPhoto(media=result["share"], caption=output)
-    msg = await app.send_photo(
-        chat_id=message.chat.id, photo=, caption=
-    )
+    await m.edit_media(Medit)
     
     
