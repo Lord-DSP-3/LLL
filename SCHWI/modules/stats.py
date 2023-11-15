@@ -81,7 +81,10 @@ def testspeed(m):
 @app.on_message(filters.command(["speedtest", "spd"]) & filters.user(ADMINS))
 @APP.on_message(filters.command(["speedtest", "spd"]) & filters.user(ADMINS))
 async def speedtest_function(client, message):
-    m = await message.reply_text("ᴛʀʏɪɴɢ ᴛᴏ ᴄʜᴇᴄᴋ ᴜᴩʟᴏᴀᴅ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ sᴩᴇᴇᴅ")
+    m = await message.reply_animation(
+        animation="https://telegra.ph/file/2295b1f4737321f294e31.mp4",
+        caption="ᴛʀʏɪɴɢ ᴛᴏ ᴄʜᴇᴄᴋ ᴜᴩʟᴏᴀᴅ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ sᴩᴇᴇᴅ"
+    )
     loop = asyncio.get_event_loop()
     result = await loop.run_in_executor(None, testspeed, m)
     output = f"""**sᴩᴇᴇᴅᴛᴇsᴛ ʀᴇsᴜʟᴛs**
