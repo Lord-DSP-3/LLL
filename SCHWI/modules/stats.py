@@ -56,4 +56,5 @@ async def stats_global(client, message: Message):
   > ᴩʏᴛʜᴏɴ: **{pyver.split()[0]}**
   > ᴩʏʀᴏɢʀᴀᴍ: **{pyrover}**
 """
+    await MSG.edit(text)
     
