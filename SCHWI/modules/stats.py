@@ -5,7 +5,7 @@ import psutil
 from pyrogram import __version__ as pyrover
 from pyrogram import filters
 from pyrogram.errors import MessageIdInvalid
-from pyrogram.types import Message
+from pyrogram.types import Message, InputMediaPhoto
 
 from config import ADMINS
 from SCHWI import app, APP, boot
@@ -99,8 +99,9 @@ async def speedtest_function(client, message):
 **__sᴩᴏɴsᴏʀ:__** {result['server']['sponsor']}
 **__ʟᴀᴛᴇɴᴄʏ:__** {result['server']['latency']}  
 **__ᴩɪɴɢ:__** {result['ping']}"""
+    Medit = InputMediaPhoto(media=result["share"], caption=output)
     msg = await app.send_photo(
-        chat_id=message.chat.id, photo=result["share"], caption=output
+        chat_id=message.chat.id, photo=, caption=
     )
-    await m.delete()
+    
     
