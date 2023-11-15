@@ -10,7 +10,6 @@ from pyrogram.types import Message
 
 from config import ADMINS
 from SCHWI import app, APP
-loop = asyncio.get_running_loop()
 
 @app.on_message(filters.command(["stats2", "ping2"]) & filters.group & filters.user(ADMINS))
 @APP.on_message(filters.command(["stats2", "ping2"]) & filters.group & filters.user(ADMINS))
