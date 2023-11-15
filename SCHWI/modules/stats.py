@@ -4,7 +4,6 @@ from sys import version as pyver
 import psutil
 from pyrogram import __version__ as pyrover
 from pyrogram import filters
-from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import Message, InputMediaPhoto
 
 from config import ADMINS
