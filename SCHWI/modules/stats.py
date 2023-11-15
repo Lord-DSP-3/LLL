@@ -9,7 +9,9 @@ from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import Message
 
 from config import ADMINS
-from SCHWI import app, APP
+from SCHWI import app, APP, boot
+import time
+from HELPER import get_readable_time
 
 @app.on_message(filters.command(["stats2", "ping2"]) & filters.group & filters.user(ADMINS))
 @APP.on_message(filters.command(["stats2", "ping2"]) & filters.group & filters.user(ADMINS))
@@ -34,6 +36,8 @@ async def stats_global(client, message: Message):
     used = str(used)
     free = hdd.free / (1024.0**3)
     free = str(free)
+    uptime = get_readable_time((time.time() - boot))
+    
     text = f"""
 <b><u>📟 HARDWARE</b></u>
   > ᴩʟᴀᴛғᴏʀᴍ: **{sc}**
@@ -41,7 +45,8 @@ async def stats_global(client, message: Message):
   > ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs: **{p_core}**
   > ᴛᴏᴛᴀʟ ᴄᴏʀᴇs: **{t_core}**
   > ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ: **{cpu_freq}**
-
+  > ᴜᴘᴛɪᴍᴇ: **{uptime}**
+  
 <b><u>💾 STORAGE</b></u>
   > ᴀᴠᴀɪʟᴀʙʟᴇ: **{total[:4]} GiB**
   > ᴜsᴇᴅ: **{used[:4]} GiB**
