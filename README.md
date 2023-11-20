@@ -4,7 +4,7 @@
 
 4) `pip3 install -U pip`
 
-5) 2) `apt-get update && apt-get upgrade -y`
+5) `apt-get update && apt-get upgrade -y`
 
 6) `git clone https://github.com/{name} && cd {name}`
 
